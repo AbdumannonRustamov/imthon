@@ -2,17 +2,15 @@ const signUpButton = document.querySelector('.btn2');
 signUpButton.addEventListener('click', (eventDef) => {
     eventDef.preventDefault();
     
-    const email = document.querySelector('#signupForm input[type="text"]').value;
-    const password = document.querySelector('#signupForm input[type="password"]:nth-child(2)').value;
-    const confirmPassword = document.querySelector('#signupForm input[type="password"]:nth-child(3)').value;
+    const email = document.querySelector('#signupForm');
+    const password = document.querySelector('#signupForm');
+    const confirmPassword = document.querySelector('#signupForm');
     
     if (password === confirmPassword) {
         localStorage.setItem('userEmail', email);
         localStorage.setItem('userPassword', password);
         
         window.location.href = 'home.html';
-    } else {
-        alert('Parollar bir xil bo\'lishi kerak!');
     }
 });
 
@@ -20,8 +18,8 @@ const loginButton = document.querySelector('.btn1');
 loginButton.addEventListener('click', (event) => {
     event.preventDefault();
     
-    const loginEmail = document.querySelector('#loginForm input[type="text"]').value;
-    const loginPassword = document.querySelector('#loginForm input[type="password"]').value;
+    const loginEmail = document.querySelector('#loginForm');
+    const loginPassword = document.querySelector('#loginForm');
     
     const storedEmail = localStorage.getItem('userEmail');
     const storedPassword = localStorage.getItem('userPassword');

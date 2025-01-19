@@ -69,13 +69,12 @@ async function addBook(event) {
             inputs.forEach(input => input.value = '');
             fetchBooks(); 
         } else {
-            console.error('Xatolik:', response.status);
+            console.error('Xatolik', response.status);
         }
     } catch (error) {
-        console.error('Xatolik yuz berdi:', error);
+        console.error('Xatolik yuz berdi', error);
     }
 }
-
 document.getElementById('inp').addEventListener('submit', addBook);
 
 fetchBooks();
